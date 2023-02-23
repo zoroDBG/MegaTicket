@@ -20,7 +20,7 @@ BotActivitySettings:
   Enabled: true
   Type: "WATCHING" # WATCHING, PLAYING, COMPETING
   Interval: 30 # Time in seconds between status changes, It's recommended to keep it above 20-30 seconds to avoid getting ratelimited
-  Statuses: "over howlcheats.com"# Valid Variables: {total-tickets}, {open-tickets}, {total-messages}, {total-users}, {total-channels}, {average-rating}
+  Statuses: "{total-users} users"# Valid Variables: {total-tickets}, {open-tickets}, {total-messages}, {total-users}, {total-channels}, {average-rating}
     - "{total-tickets} tickets"
     - "{total-users} users"
     - "{total-messages} messages"
