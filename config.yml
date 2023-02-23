@@ -2,16 +2,16 @@
 # BOT INFORMATION
 # You must not leave them as blank!
 # ===========================================================================
-Token: "BOT_TOKEN" # If you don't know how to get it, Look at our docs: https://docs.plexdevelopment.net
+Token: "MTA3Njg2OTc5MTcxMDcyMDA0Mg.GsCiQK.U8zXsHosNWz1vKsNUhCSLsrGb_pL6Qig-QJBAU" # If you don't know how to get it, Look at our docs: https://docs.plexdevelopment.net
 LicenseKey: "" # Directleaks
-BotName: "Plex Tickets"
-GuildID: "SERVER_ID" # This is your server's ID, Right click on your server icon and copy ID
-OwnerID: "OWNER_ID" # Your discord user ID, Right click on your username and copy ID
-Prefix: "t!"
+BotName: "SupportBot"
+GuildID: "991415413059637349" # This is your server's ID, Right click on your server icon and copy ID
+OwnerID: "1063759487023972362" # Your discord user ID, Right click on your username and copy ID
+Prefix: "h!"
 EmbedColors: "#f77b38" # Hex color!
 SlashCommands: true # Enable slash commands?
 MessageCommands: true # Enable message commands?
-LogCommands: false # If this is enabled it will log all the commands executed to the terminal
+LogCommands: true # If this is enabled it will log all the commands executed to the terminal
 
 # ===========================================================================
 # BOT ACTIVITY
@@ -20,7 +20,7 @@ BotActivitySettings:
   Enabled: true
   Type: "WATCHING" # WATCHING, PLAYING, COMPETING
   Interval: 30 # Time in seconds between status changes, It's recommended to keep it above 20-30 seconds to avoid getting ratelimited
-  Statuses: # Valid Variables: {total-tickets}, {open-tickets}, {total-messages}, {total-users}, {total-channels}, {average-rating}
+  Statuses: "over howlcheats.com"# Valid Variables: {total-tickets}, {open-tickets}, {total-messages}, {total-users}, {total-channels}, {average-rating}
     - "{total-tickets} tickets"
     - "{total-users} users"
     - "{total-messages} messages"
@@ -30,31 +30,31 @@ BotActivitySettings:
 # ===========================================================================
 
 TicketPanelSettings: # Use the panel command to send the ticket panel to a channel!
-  PanelTitle: "Support Tickets"
+  PanelTitle: "Create a Support Ticket!"
   PanelMessage: "> If you need any assistance click on the button corresponding to the type of ticket you wish to open."
-  PanelImage: "https://i.imgur.com/5FSwmVv.png" # Recommended Size: 450x103, you can also use the default one, Leave blank for none
+  PanelImage: "ttps://i.ibb.co/8bgHqf1/tickethumb.png" # Recommended Size: 450x103, you can also use the default one, Leave blank for none
   PanelThumbnail: "" # Panel thumbnail image link, leave blank for none
   FooterTimestamp: false # Enable timestamp when you created the panel in the footer?
-  FooterMsg: "" # Footer message, leave blank for none
-  FooterIcon: "" # The image in the footer, only works if FooterMsg or Timestamp is specified, leave blank for none
-  EmbedColor: "" # Hex embed color, If this is blank it will use the default embed color you specified
+  FooterMsg: "HowlCheats.com | Support System" # Footer message, leave blank for none
+  FooterIcon: "https://cdn.discordapp.com/avatars/1076869791710720042/3383de06d0e52a0fd9adbb89ae2da7ee.webp" # The image in the footer, only works if FooterMsg or Timestamp is specified, leave blank for none
+  EmbedColor: "#f60017" # Hex embed color, If this is blank it will use the default embed color you specified
 
 TicketSettings:
-  LogsChannelID: "CHANNEL_ID" # Default channel for all logs
-  CloseConfirmation: false # Confirm before closing a ticket?
+  LogsChannelID: "transcripts" # Default channel for all logs
+  CloseConfirmation: true # Confirm before closing a ticket?
   BlacklistedRoles: [""] # Users with these roles can't open tickets, You can add multiple
-  MentionAuthor: false # Mention ticket creator in new tickets?
+  MentionAuthor: true # Mention ticket creator in new tickets?
   MaxTickets: 1 # The max amount of tickets a user can have open at 1 time
   DeleteTime: 5 # Amount of time before a ticket gets deleted in seconds (after close/delete button has been pressed)
-  RestrictTicketClose: false # Only allow users with support roles to close tickets?
+  RestrictTicketClose: true # Only allow users with support roles to close tickets?
   TicketCooldown: 0 # Add a cooldown for creating new tickets to prevent spam/abuse? (Time in seconds, set to 0 to disable)
   SelectMenu: false # Use a dropdown menu for creating tickets instead of buttons?
   DeleteCommandTranscript: true # Should the delete command save ticket transcripts?
   ChannelTopic: "Creator: {user-tag} | Category: {category}" # The channel topic for all tickets, Variables: {username}, {user-tag}, {category}
-  TicketCloseReason: true # Require a reason for closing tickets?
+  TicketCloseReason: false # Require a reason for closing tickets?
 
 TicketTranscriptSettings:
-  TranscriptType: "TXT" # You can choose between "HTML" and "TXT"
+  TranscriptType: "HTML" # You can choose between "HTML" and "TXT"
   SaveInFolder: false # Save all transcripts in a "transcripts" folder?
   SaveImages: true # Download and save all images in transcripts? (Only works with HTML) This will increase the file size
   MessagesRequirement: 1 # The amount of messages that has to be in a ticket for a transcript to be generated and saved
@@ -67,13 +67,13 @@ ClaimingSystem:
 
 ArchiveTickets:
   Enabled: false # If this is enabled, tickets won't get deleted instantly when the close button gets pressed, users will be able to re-open, create transcripts and delete it.
-  TranscriptChannelID: "CHANNEL_ID" # The channel where manually saved transcripts will be sent to
+  TranscriptChannelID: "991415414787678339" # The channel where manually saved transcripts will be sent to
   ViewClosedTicket: false # Should the ticket creator still be able to view the ticket but not send any messages when it's closed? They will only be able to re-open it.
   RenameClosedTicket: true # Should closed tickets be renamed to "closed-user"?
   TicketOpenLimit: false # Should archived tickets count towards the max tickets open limit?
 
 TicketAlert: # This configures the alert command, If the alert command is used in a ticket, the bot pings the ticket creator and notifies them that their ticket will be closed in the specified time unless they respond
-  Time: "12" # Time in hours, 1-24 hours only
+  Time: "24" # Time in hours, 1-24 hours only
   Title: "Ticket Close Notification"
   Message: "This ticket will be closed in ``{time} hours`` if no response has been received." # Use {time} for the time
 
@@ -129,7 +129,7 @@ deleteTicket:
 
 # This is the embed that gets sent to the ticket when it gets created
 TicketOpenEmbed:
-  EmbedColor: "" # Hex embed color, If this is blank it will use the default embed color you specified
+  EmbedColor: "#f60017" # Hex embed color, If this is blank it will use the default embed color you specified
   FooterMsg: "" # Footer message, leave blank for none
   FooterIcon: "" # The image in the footer, only works if FooterMsg is specified, leave blank for none
   Timestamp: true # Enable footer timestamp?
@@ -138,36 +138,36 @@ TicketOpenEmbed:
 
 # Button 1
 TicketButton1: # You can't disable the first button!
-  TicketName: "Example 1" # This will be the button and ticket name/category
-  Description: "" # Category description, This only works if SelectMenu is enabled, Leave blank to disable
-  TicketCategoryID: "CATEGORY_ID" # Channel Category ID
+  TicketName: "Pay through Paypal" # This will be the button and ticket name/category
+  Description: "1046513648371241060" # Category description, This only works if SelectMenu is enabled, Leave blank to disable
+  TicketCategoryID: "1078323033082695820" # Channel Category ID
   ClosedCategoryID: "" # The category the ticket will be moved to when it gets closed, leave blank to use the current category (only works if ArchiveTickets is enabled)
-  TicketMessageTitle: "Support Ticket ({category})" # Use {category} to get the category name for the ticket opened
+  TicketMessageTitle: "Paypal Payment Ticket ({category})" # Use {category} to get the category name for the ticket opened
   TicketMessage: "> Thank you for contacting support.\n> Please describe your issue and await a response." # Use {user} to get the user that created the ticket
-  ButtonEmoji: "" # Leave blank for no emoji
-  ButtonColor: "Green" # Blurple, Gray, Green, Red
-  SupportRoles: ["ROLE_ID"] # Users with these roles can view tickets in this category, You can add multiple roles
+  ButtonEmoji: "<:paypal:1077630313657802812>" # Leave blank for no emoji
+  ButtonColor: "Gray" # Blurple, Gray, Green, Red
+  SupportRoles: ["991415413059637355"] # Users with these roles can view tickets in this category, You can add multiple roles
   MentionSupportRoles: false # Mention all the Support Roles in new tickets?
-  ChannelName: "ticket-{username}" # Variables: {total-tickets}, {username}, {user-tag}, {user-id}
+  ChannelName: "pay-{username}" # Variables: {total-tickets}, {username}, {user-tag}, {user-id}
 
 # Button 2
 TicketButton2:
   Enabled: true # Enable 2nd category?
-  TicketName: "Example 2" # This will be the button and ticket name/category
+  TicketName: "Contact Support" # This will be the button and ticket name/category
   Description: "" # Category description, This only works if SelectMenu is enabled, Leave blank to disable
-  TicketCategoryID: "CATEGORY_ID" # Channel Category ID
+  TicketCategoryID: "1078323033082695820" # Channel Category ID
   ClosedCategoryID: "" # The category the ticket will be moved to when it gets closed, leave blank to use the current category (only works if ArchiveTickets is enabled)
   TicketMessageTitle: "Support Ticket ({category})" # Use {category} to get the category name for the ticket opened
   TicketMessage: "> Thank you for contacting support.\n> Please describe your issue and await a response." # Use {user} to get the user that created the ticket
-  ButtonEmoji: "" # Leave blank for no emoji
-  ButtonColor: "Red" # Blurple, Gray, Green, Red
-  SupportRoles: ["ROLE_ID"] # Users with these roles can view tickets in this category, You can add multiple roles
+  ButtonEmoji: "<:costumerservice:1077634664631636100>" # Leave blank for no emoji
+  ButtonColor: "Gray" # Blurple, Gray, Green, Red
+  SupportRoles: ["991415413059637355"] # Users with these roles can view tickets in this category, You can add multiple roles
   MentionSupportRoles: false # Mention all the Support Roles in new tickets?
-  ChannelName: "ticket-{username}" # Variables: {total-tickets}, {username}, {user-tag}, {user-id}
+  ChannelName: "support-{username}" # Variables: {total-tickets}, {username}, {user-tag}, {user-id}
 
 # Button 3
 TicketButton3:
-  Enabled: true # Enable 3rd category?
+  Enabled: false # Enable 3rd category?
   TicketName: "Example 3" # This will be the button and ticket name/category
   Description: "" # Category description, This only works if SelectMenu is enabled, Leave blank to disable
   TicketCategoryID: "CATEGORY_ID" # Channel Category ID
@@ -182,7 +182,7 @@ TicketButton3:
 
 # Button 4
 TicketButton4:
-  Enabled: true # Enable 4th category?
+  Enabled: false # Enable 4th category?
   TicketName: "Example 4" # This will be the button and ticket name/category
   Description: "" # Category description, This only works if SelectMenu is enabled, Leave blank to disable
   TicketCategoryID: "CATEGORY_ID" # Channel Category ID
@@ -197,7 +197,7 @@ TicketButton4:
 
 # Button 5
 TicketButton5:
-  Enabled: true # Enable 5th category?
+  Enabled: false # Enable 5th category?
   TicketName: "Example 5" # This will be the button and ticket name/category
   Description: "" # Category description, This only works if SelectMenu is enabled, Leave blank to disable
   TicketCategoryID: "CATEGORY_ID" # Channel Category ID
@@ -264,13 +264,13 @@ TicketButton8:
 # TICKET REVIEW SYSTEM AND USER CLOSE DM
 # ===========================================================================
 TicketUserCloseDM:
-  Enabled: false # Send a message to the user that created the ticket when it gets closed?
-  SendTranscript: false # Send ticket transcript with the message?
+  Enabled: true # Send a message to the user that created the ticket when it gets closed?
+  SendTranscript: true # Send ticket transcript with the message?
   TicketInformation: false # Add ticket information to the embed? (total messages in ticket, claimed by, category, etc..)
   CloseEmbedMsg: "> Your ticket has been closed in **{guildName}**" # Use {guildName} for your server's name
 
 TicketReviewSettings:
-  Enabled: true # Enable ticket review system? (This sends a message to the user when their ticket closes with the option to rate it 1-5 stars)
+  Enabled: false # Enable ticket review system? (This sends a message to the user when their ticket closes with the option to rate it 1-5 stars)
   AskWhyModal: false # Ask users to explain why they are giving their review?
   ReviewChannelID: "CHANNEL_ID" # The channel all reviews should be sent to, Only works if AskWhyModal is set to true, leave blank for none
   CloseEmbedReviewMsg: "> Your ticket has been closed in **{guildName}**\n> We would like to know how satisfied you are with our support by rating it with **1-5** stars below" # Use {guildName} for your server's name
